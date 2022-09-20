@@ -1,0 +1,16 @@
+.todo {
+  background-color: rgb(179, 231, 213);
+  border: 1px solid rgb(141, 184, 169);
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.todo:hover {
+  background-color: rgb(211, 247, 234);
+}
+
+.list__todo {
+  overflow-y: auto;
+  width: 80%;
+  margin-right: 3px;
+}

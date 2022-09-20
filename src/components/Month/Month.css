@@ -1,0 +1,42 @@
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 3px;
+  height: 70vh;
+}
+
+.thead {
+  margin-bottom: 10px;
+}
+
+.day {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  border: 1px solid black;
+  overflow-y: auto;
+  transition: background-color 0.5s;
+}
+
+.day:hover {
+  background-color: rgb(225, 232, 252);
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+.weekend {
+  color: rgb(233, 92, 92);
+  background-color: rgb(248, 221, 221);
+}
+
+.today {
+  background-color: rgb(220, 231, 236);
+}
+
+.numberDay {
+  text-align: right;
+}

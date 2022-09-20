@@ -1,0 +1,12 @@
+.navbar {
+  justify-content: space-between;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+#nav-box {
+  padding: 10px;
+  margin-bottom: 0.5rem;
+}
