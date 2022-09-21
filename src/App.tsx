@@ -14,6 +14,7 @@ import { ModalContext } from './context/ReactContext';
 function App() {
   const [month, setMonth] = useState<DayWithTodos[]>([]);
   const [date, setDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState<string>('');
   const { isActiv, selectedTodo } = useContext(ModalContext);
 
   const [todos, setTodos] = useState<Todo[]>(() => {
@@ -58,11 +59,14 @@ function App() {
         month={month}
         date={date}
         todos={todos}
+        setSelectedDate={setSelectedDate}
       />
       {isActiv && (<Modal
         addToDo={addToDo}
         deletTodo={deletTodo}
         todo={selectedTodo}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
       />)}
     </div>
   );

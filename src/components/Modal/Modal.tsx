@@ -3,16 +3,20 @@ import { ModalContext } from '../../context/ReactContext';
 import { Todo } from '../../react-app-env';
 
 type Props = {
-    addToDo: (a: Todo) => void;
-    deletTodo:(a: Todo) => void;
-    todo?: Todo | null;
+    addToDo: (a: Todo) => void,
+    deletTodo:(a: Todo) => void,
+    todo?: Todo | null,
+    selectedDate?: string,
+    setSelectedDate: (str: string) => void,
 }
 
-export const Modal: React.FC<Props> = ({ addToDo, deletTodo, todo }) => {
+export const Modal: React.FC<Props> = ({
+  addToDo, deletTodo, todo, selectedDate, setSelectedDate,
+}) => {
   const [title, setTitle] = useState(todo?.title || '');
   const [errTitle, setErrTitle] = useState(false);
 
-  const [date, setDate] = useState(todo?.date || '');
+  const [date, setDate] = useState(todo?.date || selectedDate || '');
   const [errDate, setErrDate] = useState(false);
 
   const [time, setTime] = useState(todo?.time || '');
@@ -41,6 +45,7 @@ export const Modal: React.FC<Props> = ({ addToDo, deletTodo, todo }) => {
     if (title && date && time) {
       addToDo(newTodo);
       setIsActiv(false);
+      setSelectedDate('');
     }
   };
 
@@ -77,6 +82,7 @@ export const Modal: React.FC<Props> = ({ addToDo, deletTodo, todo }) => {
             onClick={() => {
               setIsActiv(false);
               setSelectedTodo(null);
+              setSelectedDate('');
             }}
           ></button>
         </header>

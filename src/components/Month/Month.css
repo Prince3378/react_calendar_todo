@@ -17,6 +17,7 @@
   border: 1px solid black;
   overflow-y: auto;
   transition: background-color 0.5s;
+  cursor: pointer;
 }
 
 .day:hover {
